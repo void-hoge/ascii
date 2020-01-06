@@ -10,4 +10,4 @@ run: $(PROGRAM)
 	./$(PROGRAM) a
 
 clean:
-	rm *.out | rm $(PROGRAMm)
+	rm *.out | rm $(PROGRAM)
