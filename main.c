@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+void show_binary(const unsigned char c) {
+	printf("0b");
+	for (unsigned char i = 1<<7; i != 0; i>>=1) {
+		printf("%c", (c&i)?'1':'0');
+	}
+	printf("\n");
+}
+
 int main(const int argc, const char *argv[]) {
 	switch (argc) {
 		case 1: {
@@ -34,7 +42,8 @@ int main(const int argc, const char *argv[]) {
 			break;
 		}
 		case 2: {
-			printf("%c %d 0x%x\n", *argv[1], (int)*argv[1], (int)*argv[1]);
+			printf("%c %d 0x%x ", *argv[1], (int)*argv[1], (int)*argv[1]);
+			show_binary(*argv[1]);
 			break;
 		}
 		default: {
